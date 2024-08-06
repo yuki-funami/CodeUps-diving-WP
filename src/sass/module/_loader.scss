@@ -1,0 +1,169 @@
+@use "global" as *;
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  z-index: 9999;
+}
+.loader.is-none {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+}
+.loader__image-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+}
+.loader__left-image {
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 50vw;
+  height: inherit;
+}
+.loader__left-image.is-active {
+  animation-name: loadingUpLeftSp;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  animation-fill-mode: forwards;
+  @include mq("md") {
+    animation-name: loadingUpLeftPc;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes loadingUpLeftSp {
+  0% {
+    top: 100%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes loadingUpLeftPc {
+  0% {
+    top: 100%;
+    left: 10%;
+    width: 30vw;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 50vw;
+  }
+}
+.loader__right-image {
+  position: absolute;
+  top: 100%;
+  right: 15%;
+  width: 50vw;
+  height: inherit;
+}
+.loader__right-image.is-active {
+  animation-name: loadingUpRightSp;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  animation-delay: 0.08s;
+  animation-fill-mode: forwards;
+  @include mq("md") {
+    animation-name: loadingUpRightPc;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes loadingUpRightSp {
+  0% {
+    top: 100%;
+    right: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes loadingUpRightPc {
+  0% {
+    top: 100%;
+    right: 15%;
+    width: 20vw;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    width: 50vw;
+  }
+}
+.loader__left-image picture,
+.loader__right-image picture {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+.loader__left-image picture img,
+.loader__right-image picture img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: right;
+}
+.loader__left-image picture img {
+  object-position: right;
+}
+.loader__right-image picture img {
+  object-position: left;
+}
+.loader__title-wrap {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader__title {
+  color: $accent;
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: calc(48 / 40);
+  letter-spacing: 0.54em;
+  text-indent: 0.54em;
+  font-family: $sub-english-font-family;
+  text-transform: uppercase;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+    letter-spacing: 0.53em;
+    text-indent: 0.53em;
+  }
+}
+.loader__text {
+  color: $accent;
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: calc(33 / 20);
+  font-family: $english-font-family;
+  text-align: center;
+}
+.is-loaded > .loader__title,
+.is-loaded > .loader__text {
+  color: $white;
+}

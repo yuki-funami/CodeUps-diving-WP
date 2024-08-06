@@ -1,0 +1,126 @@
+@use "global" as *;
+
+.tab-list__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(20);
+  @include mq("md") {
+    gap: rem(90);
+  }
+}
+.tab-list__item {
+  width: 100%;
+}
+.tab-list__item button {
+  position: relative;
+  width: 100%;
+  color: $accent;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(20 / 14);
+  text-align: center;
+  background-color: $pastel;
+  box-shadow: 2px 2px 4px rgba($shadow, 0.25);
+  padding-block: rem(10);
+  padding-inline: 0;
+  transition: color 0.2s, background-color 0.2s;
+  @include mq("md") {
+    max-width: rem(300);
+    min-width: rem(200);
+    font-size: rem(24);
+    line-height: 1;
+    box-shadow: none;
+    padding-top: rem(35);
+    padding-bottom: rem(32);
+    padding-left: rem(72);
+  }
+}
+.tab-list__item:nth-child(1) > button::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: rem(64);
+    height: rem(64);
+    background-image: url(../images/svg/whale_accent.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.2s;
+  }
+}
+.tab-list__item:nth-child(2) > button::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    width: rem(64);
+    height: rem(64);
+    background-image: url(../images/svg/shark_accent.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.2s;
+  }
+}
+.tab-list__item:nth-child(3) > button::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: rem(64);
+    height: rem(64);
+    background-image: url(../images/svg/fish_accent.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.2s;
+  }
+}
+@media (hover) {
+  .tab-list__item button:hover {
+    color: $white;
+    background-color: $accent;
+  }
+  .tab-list__item:nth-child(1) > button:hover:before {
+    @include mq("md") {
+      background-image: url(../images/svg/whale.svg);
+    }
+  }
+  .tab-list__item:nth-child(2) > button:hover::before {
+    @include mq("md") {
+      background-image: url(../images/svg/shark.svg);
+    }
+  }
+  .tab-list__item:nth-child(3) > button:hover::before {
+    @include mq("md") {
+      background-image: url(../images/svg/fish.svg);
+    }
+  }
+}
+.tab-list__item button.is-active {
+  color: $white;
+  background-color: $accent;
+  @include mq("md") {
+    box-shadow: 4px 4px 8px rgba($shadow, 0.25);
+  }
+}
+.tab-list__item:nth-child(1) > button.is-active::before {
+  @include mq("md") {
+    background-image: url(../images/svg/whale.svg);
+  }
+}
+.tab-list__item:nth-child(2) > button.is-active::before {
+  @include mq("md") {
+    background-image: url(../images/svg/shark.svg);
+  }
+}
+.tab-list__item:nth-child(3) > button.is-active::before {
+  @include mq("md") {
+    background-image: url(../images/svg/fish.svg);
+  }
+}

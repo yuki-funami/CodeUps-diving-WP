@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.archive-voice__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.archive-voice__cards {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(39);
+  }
+}
+.archive-voice__page-navigation {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(72);
+  }
+}

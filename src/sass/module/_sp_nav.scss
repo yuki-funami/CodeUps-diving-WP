@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.sp-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - rem(80));
+  background-color: $accent;
+  margin-top: rem(80);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s;
+  z-index: 9;
+  overflow-y: scroll;
+}
+.is-open .sp-nav {
+  opacity: 1;
+  visibility: visible;
+}
+.sp-nav__items {
+  column-count: 2;
+  column-gap: rem(30);
+  padding-left: 9.7vw;
+  padding-right: 5.4vw;
+  margin-top: rem(24);
+}
+.sp-nav__item {
+  margin-top: rem(40);
+}
+.sp-nav__item:first-child,
+.sp-nav__item:nth-child(5) {
+  margin-top: 0;
+}
+.sp-nav__item > a {
+  display: block;
+  position: relative;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+}
+.sp-nav__item > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: rem(-22);
+  width: rem(18);
+  height: rem(18);
+  background-image: url(../images/svg/starfish.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sp-nav__small-item {
+  margin-top: rem(24);
+}
+.sp-nav__small-item > a {
+  display: block;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(18 / 16);
+}

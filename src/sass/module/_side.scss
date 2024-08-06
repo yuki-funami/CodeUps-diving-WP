@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(80);
+}

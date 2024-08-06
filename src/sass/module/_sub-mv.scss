@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.sub-mv {
+  position: relative;
+  width: 100vw;
+  height: rem(460);
+  @include mq("md") {
+    height: rem(548);
+  }
+}
+.sub-mv__image {
+  width: inherit;
+  height: inherit;
+}
+.sub-mv__image picture {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+.sub-mv__image picture img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.sub-mv__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  @include mq("md") {
+    top: 59%;
+  }
+}
+.sub-mv__title {
+  color: $white;
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: calc(48 / 40);
+  font-family: $sub-english-font-family;
+  text-transform: capitalize;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+  }
+}
+.sub-mv__title--about-us {
+  text-transform: none;
+}
+.sub-mv__title--about-us::first-letter {
+  text-transform: uppercase;
+}
+.sub-mv__title--faq {
+  text-transform: uppercase;
+}
+.sub-mv__title--sitemap {
+  text-transform: uppercase;
+}
+.sub-mv__title--terms {
+  text-transform: lowercase;
+}

@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.layout-contact {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(140);
+  }
+}
+.layout-contact--subpage {
+  margin-top: rem(106);
+  @include mq("md") {
+    margin-top: rem(140);
+  }
+}
+.layout-contact--blog {
+  margin-top: rem(104);
+}
+.layout-contact--sitemap {
+  margin-top: rem(70);
+  @include mq("md") {
+    margin-top: rem(104);
+  }
+}

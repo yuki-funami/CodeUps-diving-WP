@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.nav {
+  color: $white;
+}
+.nav--sitemap {
+  color: $black;
+}
+.nav__items {
+  column-count: 2;
+  column-gap: rem(30);
+  padding-left: rem(22);
+  margin-right: -15px;
+  @include mq("md") {
+    column-count: 4;
+    column-gap: rem(44);
+    padding-left: rem(22);
+    margin-right: 0;
+  }
+}
+.nav__items--sitemap {
+  column-gap: rem(50);
+  @include mq("md") {
+    column-gap: rem(139);
+  }
+}
+.nav__item {
+  width: 100%;
+  margin-top: rem(40);
+}
+.nav__item:first-child,
+.nav__item:nth-child(5) {
+  margin-top: 0;
+}
+.nav__item:nth-child(3),
+.nav__item:nth-child(7) {
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+.nav__item > a {
+  position: relative;
+  display: block;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+}
+.nav__item > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: rem(-22);
+  width: rem(18);
+  height: rem(18);
+  background-image: url(../images/svg/starfish.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.nav__item--sitemap > a::before {
+  background-image: url(../images/svg/starfish_black.svg);
+}
+.nav__small-item {
+  margin-top: rem(24);
+}
+.nav__small-item > a {
+  display: block;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(18 / 16);
+}
+@media (hover) {
+  .nav__item > a:hover {
+    opacity: 0.7;
+  }
+  .nav__small-item > a:hover {
+    opacity: 0.7;
+  }
+}

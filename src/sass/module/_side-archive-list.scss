@@ -1,0 +1,58 @@
+@use "global" as *;
+
+.side-archive-list__year {
+  cursor: pointer;
+  position: relative;
+  color: $accent;
+  font-size: rem(24);
+  font-weight: $regular;
+  line-height: calc(39 / 24);
+  margin-left: rem(32);
+}
+.side-archive-list__year.is-open::before {
+  content: "";
+  position: absolute;
+  top: rem(14);
+  left: rem(-30);
+  width: rem(20);
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background-color: $accent;
+}
+.side-archive-list__year:not(.is-open)::before {
+  content: "";
+  position: absolute;
+  top: rem(14);
+  left: rem(-30);
+  width: rem(20);
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background-color: $accent;
+  transform: rotate(30deg);
+}
+.side-archive-list__child {
+  margin-left: rem(24);
+}
+.side-archive-list__year:not(.is-open) > .side-archive-list__child {
+  display: none;
+}
+.side-archive-list__month {
+  position: relative;
+}
+.side-archive-list__month::before {
+  content: "";
+  position: absolute;
+  top: rem(12);
+  left: rem(-32);
+  width: rem(20);
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background-color: $accent;
+  transform: rotate(30deg);
+}
+.side-archive-list__month > a {
+  color: $accent;
+  font-size: rem(24);
+  font-weight: $regular;
+  line-height: calc(39 / 24);
+}

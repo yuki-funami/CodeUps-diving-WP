@@ -1,0 +1,62 @@
+@use "global" as *;
+
+.pc-nav {
+  height: inherit;
+}
+.pc-nav__items {
+  display: flex;
+  gap: rem(40);
+  height: inherit;
+}
+.pc-nav__item {
+  height: inherit;
+  text-align: center;
+}
+.pc-nav__item a {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: inherit;
+}
+.pc-nav__item a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: rem(22);
+  left: 0;
+  height: rem(1);
+  background-color: $white;
+  border-radius: rem(1);
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+@media (hover) {
+  .pc-nav__item a:hover::after {
+    transform: scale(1, 1);
+  }
+}
+.pc-nav__item-english {
+  color: $white;
+  font-size: rem(18);
+  font-weight: $regular;
+  line-height: 1;
+  font-family: $english-font-family;
+  margin-top: rem(-1);
+}
+.pc-nav__item-english::first-letter {
+  text-transform: uppercase;
+}
+.pc-nav__item:nth-child(7) .pc-nav__item-english {
+  text-transform: uppercase;
+}
+.pc-nav__item-japanese {
+  color: $white;
+  font-size: rem(10);
+  font-weight: $regular;
+  line-height: calc(15 / 10);
+  margin-top: rem(4);
+}

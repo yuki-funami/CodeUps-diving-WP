@@ -1,0 +1,17 @@
+@use "global" as *;
+
+.contact-thanks__text-a {
+  text-align: center;
+  color: $black;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(18 / 16);
+}
+.contact-thanks__text-b {
+  text-align: center;
+  color: $black;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(23 / 16);
+  margin-top: rem(40);
+}

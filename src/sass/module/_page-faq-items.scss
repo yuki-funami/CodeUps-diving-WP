@@ -1,0 +1,5 @@
+@use "global" as *;
+
+.page-faq-items__item:not(:first-child) {
+  margin-top: rem(40);
+}

@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.fish {
+  position: relative;
+}
+.fish::before {
+  content: "";
+  position: absolute;
+  top: rem(-25);
+  left: max(calc(50% - 38.7rem), rem(16));
+  width: rem(120);
+  height: rem(56);
+  background-image: url(../images/svg/sea-goldie_accent.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(-1, 1);
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    width: rem(301);
+    height: rem(139);
+  }
+}
+.fish--about-us::before {
+  z-index: 1;
+  @include mq("md") {
+    top: rem(-151);
+    z-index: -1;
+  }
+}
+.fish--gallery::before {
+  display: none;
+  @include mq("md") {
+    display: block;
+    top: rem(-81);
+    left: auto;
+    right: max(calc(50% - 40rem), rem(16));
+    transform: scale(1, 1);
+  }
+}
+.fish--information::before {
+  top: rem(-93);
+  @include mq("md") {
+    top: rem(-70);
+  }
+}
+.fish--blog::before {
+  z-index: 1;
+  @include mq("md") {
+    z-index: -1;
+  }
+}
+.fish--sitemap::before {
+  @include mq("md") {
+    display: none;
+  }
+}
+.fish--terms::before {
+  top: rem(-30);
+  @include mq("md") {
+    top: rem(-78);
+  }
+}

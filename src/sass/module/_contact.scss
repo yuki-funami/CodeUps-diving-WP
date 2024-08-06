@@ -1,0 +1,58 @@
+@use "global" as *;
+
+.contact {
+  position: relative;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: rem(-26);
+  right: calc(50% - 10.8rem);
+  width: rem(109);
+  height: rem(50);
+  background-image: url(../images/svg/sea-goldie_accent.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mq("md") {
+    top: rem(-40);
+    right: max(calc(50% - 41.9rem), rem(16));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+.contact__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.contact__inner.inner {
+  padding-inline: rem(40);
+  @include mq("md") {
+    padding-inline: rem(25);
+  }
+}
+.contact__body {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 2px 2px 10px rgba($shadow, 0.25);
+    padding: rem(81) rem(50);
+  }
+}
+.contact__left-body {
+  @include mq("md") {
+    max-width: rem(522);
+    border-right: 1px solid $accent;
+    padding-right: rem(80);
+  }
+}
+.contact__right-body {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: 0;
+    margin-left: rem(83);
+  }
+}

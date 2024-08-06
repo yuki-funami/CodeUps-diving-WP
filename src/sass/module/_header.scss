@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.header {
+  width: 100vw;
+  height: rem(80);
+  background-color: rgba($color: $black, $alpha: 0.68);
+  transition: background-color 0.35s;
+  @include mq("md") {
+    height: rem(90);
+  }
+}
+.header.is-open {
+  opacity: 1;
+  background-color: $accent;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+  padding-inline: rem(15);
+  margin-inline: auto;
+  @include mq("md") {
+    padding-inline: rem(40);
+  }
+}
+.header__logo {
+  height: inherit;
+  z-index: 10;
+}
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+.header__logo-link img {
+  width: rem(102);
+  height: rem(38);
+  @include mq("md") {
+    width: rem(133);
+    height: rem(50);
+  }
+}

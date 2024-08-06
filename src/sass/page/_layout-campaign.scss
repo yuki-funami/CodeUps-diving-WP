@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.layout-campaign {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(120);
+    // scroll-margin-top: rem(120); //ページ内リンクを使用する際
+  }
+}

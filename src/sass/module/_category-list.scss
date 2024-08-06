@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.category-list__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(rem(162), 1fr));
+  column-gap: rem(21);
+  row-gap: rem(16);
+  @include mq("md") {
+    grid-template-columns: repeat(auto-fill, rem(162));
+    column-gap: rem(32);
+  }
+}
+.category-list__item {
+  width: 100%;
+}
+.category-list__item button {
+  position: relative;
+  min-width: rem(162);
+  width: 100%;
+  color: $accent;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(22 / 14);
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $white;
+  border: 1px solid $accent;
+  padding-block: rem(5);
+  padding-inline: 0;
+  transition: color 0.2s, background-color 0.2s;
+}
+@media (hover) {
+  .category-list__item button:hover {
+    color: $white;
+    background-color: $accent;
+  }
+}
+.category-list__item button.is-active {
+  color: $white;
+  background-color: $accent;
+}

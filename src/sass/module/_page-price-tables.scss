@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.page-price-tables {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(40);
+  width: 100%;
+  @include mq("md") {
+    gap: rem(80);
+  }
+}

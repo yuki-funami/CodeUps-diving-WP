@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.not-found {
+  position: relative;
+  background-color: $accent;
+}
+.not-found::before {
+  content: "";
+  position: absolute;
+  top: rem(80);
+  left: max(calc(50% - 11rem), rem(16));
+  width: rem(345);
+  height: rem(345);
+  background-image: url(../images/svg/whale_404.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mq("md") {
+    top: rem(88);
+    left: max(calc(50% - 34rem), rem(16));
+    width: rem(698);
+    height: rem(698);
+  }
+}
+.not-found__inner {
+  position: relative;
+  max-width: rem(600);
+  width: 100%;
+}
+.not-found__content {
+  text-align: center;
+  margin-top: rem(63);
+  @include mq("md") {
+    margin-top: rem(137);
+  }
+}
+.not-found__title {
+  color: $white;
+  font-size: rem(80);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  font-family: $sub-english-font-family;
+  @include mq("md") {
+    font-size: rem(160);
+  }
+}
+.not-found__text {
+  color: $white;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+  font-family: $sub-english-font-family;
+  margin-top: rem(4);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.not-found__button {
+  padding-bottom: rem(4);
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

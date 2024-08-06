@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.footer-sns__items {
+  display: flex;
+}
+.footer-sns__item {
+  width: rem(21);
+  @include mq("md") {
+    width: rem(26);
+  }
+}
+.footer-sns__item:not(:first-child) {
+  margin-left: rem(21);
+  @include mq("md") {
+    margin-left: rem(21);
+  }
+}
+@media (hover) {
+  .footer-sns__item-link:hover {
+    opacity: 0.7;
+  }
+}
+.footer-sns__item-link img {
+  width: rem(20);
+  height: rem(20);
+  @include mq("md") {
+    width: rem(26);
+    height: rem(26);
+  }
+}

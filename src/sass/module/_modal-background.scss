@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 32, 32, 0.8);
+  z-index: 11;
+}
+.modal-background img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 95%;
+  width: 100%;
+  max-height: 95%;
+  height: 100%;
+  object-fit: contain;
+  @include mq("md") {
+    max-width: 64%;
+    max-height: 90%;
+  }
+}

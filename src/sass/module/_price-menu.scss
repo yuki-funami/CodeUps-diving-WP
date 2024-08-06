@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.price-menu__title {
+  color: $black;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  padding-bottom: rem(3);
+  border-bottom: 1px solid $accent;
+  @include mq("md") {
+    padding-bottom: rem(3);
+  }
+}
+.price-menu__course {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(8);
+}
+.price-menu__course dt, .price-menu__course dd {
+  color: $black;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(24 / 14);
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+.price-menu__course dd {
+  margin-left: rem(16);
+  @include mq("md") {
+    margin-left: rem(32);
+  }
+}

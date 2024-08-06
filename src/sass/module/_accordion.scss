@@ -1,0 +1,97 @@
+@use "global" as *;
+
+summary {
+  // display: list-item;以外を指定してデフォルトの三角形アイコンを消す
+  display: block;
+}
+summary::-webkit-details-marker {
+  // Safariで表示されるデフォルトの三角形アイコンを消す
+  display: none;
+}
+.accordion.is-opened {
+  .accordion__icon::before {
+    transform: rotate(180deg);
+  }
+  .accordion__icon::after {
+    transform: rotate(180deg);
+  }
+}
+.accordion__question-text-box {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $accent;
+  padding-block: rem(17);
+  padding-left: rem(16);
+  padding-right: rem(18);
+  @include mq("md") {
+    padding-block: rem(28);
+    padding-inline: rem(40);
+  }
+}
+.accordion__question-text {
+  width: 100%;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(21 / 16);
+  @include mq("md") {
+    font-size: rem(20);
+    line-height: calc(24 / 20);
+  }
+}
+.accordion__icon {
+  position: relative;
+  width: rem(28);
+  @include mq("md") {
+    width: rem(32);
+  }
+}
+.accordion__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(28);
+  height: rem(1);
+  background-color: $white;
+  transition: transform 0.2s;
+  @include mq("md") {
+    width: rem(32);
+  }
+}
+.accordion__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(90deg);
+  width: rem(28);
+  height: rem(1);
+  background-color: $white;
+  transition: transform 0.2s;
+  @include mq("md") {
+    width: rem(32);
+  }
+}
+.accordion__answer {
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid $accent;
+  @include mq("md") {
+    margin-top: rem(16);
+  }
+}
+.accordion__answer-text {
+  color: $black;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(23 / 16);
+  padding-block: rem(23);
+  padding-inline: rem(16);
+  @include mq("md") {
+    padding: rem(39);
+  }
+}

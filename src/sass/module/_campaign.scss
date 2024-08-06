@@ -1,0 +1,99 @@
+@use "global" as *;
+
+.campaign {
+  overflow: hidden;
+  // overflow: clip; //ページ内リンクでscroll-margin-topを使用する際は、overflow:clipを使用する
+}
+.campaign__inner {
+  @include mq("md") {
+    position: relative;
+  }
+}
+.campaign__inner > .campaign__slider {
+  width: 100vw;
+  padding-left: rem(10);
+  padding-bottom: rem(15);
+  margin-top: rem(24);
+  margin-right: calc(50% - 50vw);
+  @include mq("md") {
+    margin-top: rem(37);
+  }
+}
+.campaign__button {
+  text-align: center;
+  padding-bottom: rem(4);
+  margin-top: rem(25);
+  @include mq("md") {
+    margin-top: rem(66);
+  }
+}
+.campaign__inner > .campaign__button {
+  padding-left: 10px; // swiperの余白調整
+}
+
+// swiper
+.campaign {
+  .swiper-slide {
+    display: flex;
+    width: 100%;
+    max-width: rem(280);
+    height: auto;
+    @include mq("md") {
+      max-width: rem(333);
+    }
+  }
+  .swiper-button-prev {
+    display: none;
+    @include mq("md") {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 76.55%;
+      width: rem(80);
+      height: rem(80);
+      background-color: rgba($color: $white, $alpha: 0.8);
+      border: 1px solid $accent;
+      border-radius: 50%;
+      margin-top: 0;
+      z-index: 1;
+    }
+  }
+  .swiper-button-next {
+    display: none;
+    @include mq("md") {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 90.7%;
+      width: rem(80);
+      height: rem(80);
+      background-color: rgba($color: $white, $alpha: 0.8);
+      border: 1px solid $accent;
+      border-radius: 50%;
+      margin-top: 0;
+      z-index: 1;
+    }
+  }
+  .swiper-button-prev::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: rem(21);
+    width: rem(43);
+    height: rem(7);
+    border-bottom: 1px solid $accent;
+    border-left: 2px solid $accent;
+    transform: skew(-50deg);
+  }
+  .swiper-button-next::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    right: rem(21);
+    width: rem(43);
+    height: rem(7);
+    border-bottom: 1px solid $accent;
+    border-right: 2px solid $accent;
+    transform: skew(50deg);
+  }
+}

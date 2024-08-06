@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.side-blog {
+  width: 100%;
+}
+.side-blog .side-blog__inner {
+  padding-left: rem(25);
+  padding-right: rem(26);
+  @include mq("md") {
+    padding-inline: 0;
+  }
+}
+.side-blog__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.side-blog__cards {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(23);
+  }
+}

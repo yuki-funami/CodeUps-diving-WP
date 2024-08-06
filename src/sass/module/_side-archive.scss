@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.side-archive {
+  width: 100%;
+}
+.side-archive .side-archive__inner {
+  padding-left: rem(25);
+  padding-right: rem(26);
+  @include mq("md") {
+    padding-inline: 0;
+  }
+}
+.side-archive__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.side-archive__list {
+  margin-top: rem(22);
+}

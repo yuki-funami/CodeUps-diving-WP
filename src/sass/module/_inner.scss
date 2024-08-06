@@ -1,0 +1,30 @@
+@use "global" as *;
+
+@if $startFrom == sp {
+  .inner {
+    width: 100%;
+    padding-inline: $padding-sp;
+    margin-inline: auto;
+    @include mq("md") {
+      max-width: $inner + strip-unit($padding-pc) * 2;
+      padding-inline: $padding-pc;
+    }
+  }
+} @else {
+  .inner {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+    padding-inline: $padding-pc;
+    width: 100%;
+    margin-inline: auto;
+    @include mq("md") {
+      padding-inline: $padding-sp;
+    }
+  }
+}
+// swiperの余白調整
+.campaign__inner.inner {
+  padding-left: 5px;
+  @include mq("md") {
+    padding-left: 15px;
+  }
+}

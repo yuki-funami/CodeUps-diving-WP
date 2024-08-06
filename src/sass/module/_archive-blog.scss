@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.archive-blog__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.archive-blog__body {
+  @include mq("md") {
+    display: flex;
+    gap: rem(80);
+  }
+}
+.archive-blog__main {
+  max-width: rem(706);
+  width: 100%;
+}
+.archive-blog__cards {
+  padding-inline: rem(6);
+  @include mq("md") {
+    padding-inline: 0;
+  }
+}
+.archive-blog__page-navigation {
+  margin-top: rem(80);
+}
+.archive-blog__page-navigation--single {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+.archive-blog__side {
+  margin-top: rem(80);
+  @include mq("md") {
+    max-width: rem(294);
+    margin-top: 0;
+  }
+}

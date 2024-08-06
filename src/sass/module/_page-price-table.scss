@@ -1,0 +1,109 @@
+@use "global" as *;
+
+table {
+  border-spacing: 0;
+}
+.page-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  @include mq("md") {
+    display: flex;
+  }
+}
+.page-price-table__head {
+  width: inherit;
+  @include mq("md") {
+    flex: 0.8;
+  }
+}
+.page-price-table__head tr {
+  width: inherit;
+  @include mq("md") {
+    display: block;
+    height: 100%;
+  }
+}
+.page-price-table__head tr th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  background-color: $accent;
+  padding-block: rem(8);
+  gap: rem(8);
+  @include mq("md") {
+    flex-direction: column-reverse;
+    height: inherit;
+    padding-block: 0;
+    gap: rem(10);
+  }
+}
+.page-price-table__head tr th img {
+  width: rem(24);
+  height: rem(24);
+  @include mq("md") {
+    width: rem(64);
+    height: rem(64);
+    margin-left: rem(4);
+  }
+}
+.page-price-table__head tr th p {
+  color: $white;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+}
+.page-price-table__body {
+  width: inherit;
+  @include mq("md") {
+    flex: 2;
+  }
+}
+.page-price-table__body tr {
+  display: inline-table;
+  width: inherit;
+  border-left: 1px solid $accent;
+  border-bottom: 1px solid $accent;
+}
+.page-price-table__body tr:first-child {
+  @include mq("md") {
+    border-top: 1px solid $accent;
+  }
+}
+.page-price-table__body tr th,
+.page-price-table__body tr td {
+  color: $black;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+}
+.page-price-table__body tr th {
+  text-align: center;
+  width: calc(240 / 345 * 100%);
+  border-right: 1px solid $accent;
+  padding: rem(5);
+  @include mq("md") {
+    text-align: left;
+    width: calc(340 / 500 * 100%);
+    padding-block: rem(17);
+    padding-inline: rem(15);
+  }
+}
+.page-price-table__body tr:first-child th {
+  padding-block: rem(7);
+  @include mq("md") {
+    padding-block: rem(17);
+  }
+}
+.page-price-table__body tr td {
+  text-align: right;
+  padding-block: rem(17);
+  padding-right: rem(15);
+  border-right: 1px solid $accent;
+}
+.page-price-table__body tr:first-child td {
+  padding-block: rem(19);
+  @include mq("md") {
+    padding-block: rem(17);
+  }
+}

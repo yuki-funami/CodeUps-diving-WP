@@ -1,0 +1,41 @@
+@use "sass:math";
+
+// インナー幅設定
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 1080px;
+// ※キュンパス幅ではなくインナーの幅を指す
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 15px;
+
+////////////////////
+// フォント設定
+////////////////////
+
+$base-font-family: 'Noto Sans JP', 'Noto Serif JP', sans-serif, serif;
+$english-font-family: 'Gotu', sans-serif;
+$sub-english-font-family: 'Lato', sans-serif;
+// ※検証ツールでしっかり反映されているか確認する
+
+body {
+  font-family: $base-font-family;
+}
+
+// フォントウェイト
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+$black: #0d2936;
+$white: #fff;
+$gray: #f2f2f2;
+$accent: #408f95;
+$pastel: #ddf0f1;
+$red: #c94800;
+$shadow: #000;

@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.side-voice {
+  width: 100%;
+}
+.side-voice .side-voice__inner {
+  padding-left: rem(25);
+  padding-right: rem(26);
+  @include mq("md") {
+    padding-inline: 0;
+  }
+}
+.side-voice__inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+  }
+}
+.side-voice__card {
+  margin-top: rem(24);
+}
+.side-voice__button {
+  text-align: center;
+  padding-bottom: rem(4);
+  margin-top: rem(42);
+}

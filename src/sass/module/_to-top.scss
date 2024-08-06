@@ -1,0 +1,60 @@
+@use "global" as *;
+
+.to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: rem(16);
+  right: rem(15);
+  width: rem(48);
+  height: rem(48);
+  background-color: rgba($color: $white, $alpha: 0.8);
+  border: 1px solid $accent;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.55s;
+  @include mq("md") {
+    bottom: rem(20);
+    right: rem(20);
+    width: rem(80);
+    height: rem(80);
+  }
+}
+.to-top.is-active {
+  position: absolute;
+  bottom: calc(rem(739) + rem(16));
+  @include mq("md") {
+    bottom: calc(rem(559) + rem(20));
+  }
+}
+.to-top::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: 6%;
+  transform: skew(-10deg, -50deg) rotate(80deg);
+  width: rem(36);
+  height: rem(5);
+  border-top: 1px solid $accent;
+  border-left: 2px solid $accent;
+  transition: border-color 0.35s;
+  @include mq("md") {
+    top: 50%;
+    left: 15%;
+    width: rem(50);
+    height: rem(7);
+  }
+}
+.to-top a {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+@media (hover) {
+  .to-top:hover {
+    background-color: rgba($color: $accent, $alpha: 1);
+    border: 1px solid $white;
+  }
+  .to-top:hover::before {
+    border-color: $white;
+  }
+}
